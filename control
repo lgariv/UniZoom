@@ -1,7 +1,6 @@
 Package: com.miwix.youtubezoom
 Name: UniZoom
 Author: Lavie Gariv
-//Conflicts: me.alfhaily.cercube
 Depends: mobilesubstrate, firmware (>= 11.0)
 Pre-Depends: ws.hbang.common (>= 1.12)
 Maintainer: Lavie Gariv
