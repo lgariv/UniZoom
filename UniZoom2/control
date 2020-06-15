@@ -1,0 +1,12 @@
+Package: com.miwix.youtubezoom
+Name: UniZoom
+Author: Lavie Gariv
+//Conflicts: me.alfhaily.cercube
+Depends: mobilesubstrate, firmware (>= 11.0)
+Pre-Depends: ws.hbang.common (>= 1.12)
+Maintainer: Lavie Gariv
+Architecture: iphoneos-arm
+Section: Tweaks
+Version: 2.1.0
+Depiction: https://lgariv.github.io/LaVie/depictions/?p=com.miwix.youtubezoom
+Icon: file:///Library/PreferenceBundles/youtubezoomprefs.bundle/CydiaIcon2.png

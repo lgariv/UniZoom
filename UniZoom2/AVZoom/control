@@ -1,0 +1,8 @@
+Package: com.miwix.avzoom
+Name: AVZoom
+Depends: mobilesubstrate
+Version: 1.0.0
+Architecture: iphoneos-arm
+Maintainer: Lavie Gariv
+Author: Lavie Gariv
+Section: Tweaks

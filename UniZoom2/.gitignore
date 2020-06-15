@@ -1,0 +1,5 @@
+.theos
+.vscode
+packages
+*.code-workspace
+.DS_Store
