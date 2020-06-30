@@ -21,12 +21,17 @@
                                     style:UIBarButtonItemStylePlain
                                     target:self
                                     action:@selector(respring)];
-        self.respringButton.tintColor = [UIColor blackColor];
+		if (@available(iOS 13, *)) {
+			if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark)
+	        self.respringButton.tintColor = [UIColor whiteColor];
+			else
+	        self.respringButton.tintColor = [UIColor blackColor];
+		}
         self.navigationItem.rightBarButtonItem = self.respringButton;
         self.navigationItem.titleView = [[UIView alloc] initWithFrame:CGRectMake(0,0,64,40)];
 
 		NSString *_title = @"UniZoom";
-		NSString *_subtitle = @"Version 2.1.1";
+		NSString *_subtitle = @"Version 2.1.2";
 
 		UIStackView *text = [[UIStackView alloc] initWithFrame:CGRectMake(0,0,64,16)];
 		text.axis = 1;
@@ -38,7 +43,12 @@
 		UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,64,8)];
 		titleLabel.text = _title;
         titleLabel.font = [UIFont boldSystemFontOfSize:16];
-		titleLabel.textColor = [UIColor colorWithWhite:0 alpha:1];
+		if (@available(iOS 13, *)) {
+			if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark)
+	        titleLabel.textColor = [UIColor whiteColor];
+			else
+	        titleLabel.textColor = [UIColor blackColor];
+		}
 		titleLabel.adjustsFontSizeToFitWidth = YES;
         titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
 		titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -47,7 +57,12 @@
 		UILabel *subtitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,64,8)];
 		subtitleLabel.text = _subtitle;
         subtitleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightUltraLight];
-		subtitleLabel.textColor = [UIColor colorWithWhite:0 alpha:0.7];
+		if (@available(iOS 13, *)) {
+			if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark)
+			subtitleLabel.textColor = [UIColor colorWithWhite:1 alpha:0.7];
+			else
+			subtitleLabel.textColor = [UIColor colorWithWhite:0 alpha:0.7];
+		}
 		subtitleLabel.adjustsFontSizeToFitWidth = YES;
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
 		subtitleLabel.textAlignment = NSTextAlignmentCenter;
@@ -77,9 +92,15 @@
 
 		HBAppearanceSettings *appearanceSettings = [[HBAppearanceSettings alloc] init];
 		//appearanceSettings.navigationBarBackgroundColor = [UIColor colorWithRed:204.f / 255.f green:34.f / 255.f blue:34.f / 255.f alpha:1];
-		appearanceSettings.navigationBarTintColor = [UIColor colorWithWhite:0 alpha:1];
-		appearanceSettings.navigationBarTitleColor = [UIColor colorWithWhite:0 alpha:1];
-
+		if (@available(iOS 13, *)) {
+			if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
+	        	appearanceSettings.navigationBarTintColor = [UIColor whiteColor];
+	        	appearanceSettings.navigationBarTitleColor = [UIColor whiteColor];
+			} else {
+	        	appearanceSettings.navigationBarTintColor = [UIColor blackColor];
+	        	appearanceSettings.navigationBarTitleColor = [UIColor blackColor];
+			}
+		}
 		self.hb_appearanceSettings = appearanceSettings;
     }
 
