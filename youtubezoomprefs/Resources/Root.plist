@@ -34,9 +34,7 @@
 					<key>cell</key>
 					<string>PSGroupCell</string>
 					<key>label</key>
-					<string>YouTube</string>
-				    <key>footerText</key>
-				    <string>Zoom by default: ... YouTube has just implemented that feature in app! Look inside YouTube app settings.</string>
+					<string>Apps</string>
 				</dict>		
 				<dict>
 					<key>PostNotification</key>
@@ -50,32 +48,8 @@
 					<key>key</key>
 					<string>YouTubeisEnabled</string>
 					<key>label</key>
-					<string>Enabled</string>
+					<string>YouTube</string>
 				</dict>
-				<dict>
-					<key>PostNotification</key>
-					<string>com.miwix.youtubezoomprefs/settingschanged</string>
-					<key>cell</key>
-					<string>PSSwitchCell</string>
-					<key>default</key>
-					<false/>
-					<key>defaults</key>
-					<string>com.miwix.youtubezoomprefs</string>
-					<key>key</key>
-					<string>SnapisEnabled</string>
-					<key>label</key>
-					<string>Zoom by default</string>
-					<key>enabled</key>
-					<false/>
-				</dict>
-		        <dict>
-					<key>cell</key>
-					<string>PSGroupCell</string>
-					<key>label</key>
-					<string>Netflix</string>
-					<key>tag</key>
-					<string>toBeHidden</string>
-				</dict>		
 				<dict>
 					<key>PostNotification</key>
 					<string>com.miwix.youtubezoomprefs/settingschanged</string>
@@ -88,7 +62,7 @@
 					<key>key</key>
 					<string>NetflixisEnabled</string>
 					<key>label</key>
-					<string>Enabled</string>
+					<string>Netflix</string>
 					<key>tag</key>
 					<string>toBeHidden</string>
 				</dict>
@@ -118,6 +92,24 @@
 					<key>tag</key>
 					<string>toBeHidden</string>
 				</dict>
+				<dict>
+					<key>cell</key>
+					<string>PSGroupCell</string>
+					<key>label</key>
+					<string>open-source</string>
+				</dict>
+				<dict>
+					<key>cellClass</key>
+					<string>HBLinkTableCell</string>
+					<key>label</key>
+					<string>Source Code</string>
+					<key>subtitle</key>
+					<string>https://github.com/lgariv/UniZoom</string>
+					<key>icon</key>
+					<string>Octocat.png</string>
+					<key>url</key>
+					<string>https://github.com/lgariv/UniZoom</string>
+				</dict>
 		        <dict>
 					<key>cell</key>
 					<string>PSGroupCell</string>
@@ -130,7 +122,7 @@
 			        <key>label</key>
 			        <string>Follow me on Twitter</string>
 			        <key>user</key>
-			        <string>LGarivOfficial</string>
+			        <string>LGarivDev</string>
 				</dict>
 				<dict>
 			        <key>cellClass</key>

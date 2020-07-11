@@ -6,7 +6,7 @@ Pre-Depends: ws.hbang.common (>= 1.12)
 Maintainer: Lavie Gariv
 Architecture: iphoneos-arm
 Section: Tweaks
-Version: 2.1.2
+Version: 2.1.3
 Depiction: https://lgariv.github.io/LaVie/depictions/?p=com.miwix.youtubezoom
 Description: Zoom videos up to the notch.
 Icon: https://lgariv.github.io/LaVie/depictions/com.miwix.youtubezoom/UniZoom.png

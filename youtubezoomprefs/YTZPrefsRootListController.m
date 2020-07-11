@@ -21,17 +21,12 @@
                                     style:UIBarButtonItemStylePlain
                                     target:self
                                     action:@selector(respring)];
-		if (@available(iOS 13, *)) {
-			if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark)
-	        self.respringButton.tintColor = [UIColor whiteColor];
-			else
-	        self.respringButton.tintColor = [UIColor blackColor];
-		}
-        self.navigationItem.rightBarButtonItem = self.respringButton;
+		if (@available(iOS 13, *)) self.respringButton.tintColor = [UIColor labelColor];
+		self.navigationItem.rightBarButtonItem = self.respringButton;
         self.navigationItem.titleView = [[UIView alloc] initWithFrame:CGRectMake(0,0,64,40)];
 
 		NSString *_title = @"UniZoom";
-		NSString *_subtitle = @"Version 2.1.2";
+		NSString *_subtitle = @"Version 2.1.3";
 
 		UIStackView *text = [[UIStackView alloc] initWithFrame:CGRectMake(0,0,64,16)];
 		text.axis = 1;
@@ -43,12 +38,7 @@
 		UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,64,8)];
 		titleLabel.text = _title;
         titleLabel.font = [UIFont boldSystemFontOfSize:16];
-		if (@available(iOS 13, *)) {
-			if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark)
-	        titleLabel.textColor = [UIColor whiteColor];
-			else
-	        titleLabel.textColor = [UIColor blackColor];
-		}
+		if (@available(iOS 13, *)) titleLabel.textColor = [UIColor labelColor];
 		titleLabel.adjustsFontSizeToFitWidth = YES;
         titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
 		titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -57,12 +47,7 @@
 		UILabel *subtitleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0,0,64,8)];
 		subtitleLabel.text = _subtitle;
         subtitleLabel.font = [UIFont systemFontOfSize:16 weight:UIFontWeightUltraLight];
-		if (@available(iOS 13, *)) {
-			if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark)
-			subtitleLabel.textColor = [UIColor colorWithWhite:1 alpha:0.7];
-			else
-			subtitleLabel.textColor = [UIColor colorWithWhite:0 alpha:0.7];
-		}
+		if (@available(iOS 13, *)) subtitleLabel.textColor = [UIColor labelColor];
 		subtitleLabel.adjustsFontSizeToFitWidth = YES;
         subtitleLabel.translatesAutoresizingMaskIntoConstraints = NO;
 		subtitleLabel.textAlignment = NSTextAlignmentCenter;
@@ -88,19 +73,9 @@
 
         [self.navigationItem.titleView addSubview:titleStackView];
 		
-		//self.navigationItem.titleView = titleView;
-
 		HBAppearanceSettings *appearanceSettings = [[HBAppearanceSettings alloc] init];
-		//appearanceSettings.navigationBarBackgroundColor = [UIColor colorWithRed:204.f / 255.f green:34.f / 255.f blue:34.f / 255.f alpha:1];
-		if (@available(iOS 13, *)) {
-			if (self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark) {
-	        	appearanceSettings.navigationBarTintColor = [UIColor whiteColor];
-	        	appearanceSettings.navigationBarTitleColor = [UIColor whiteColor];
-			} else {
-	        	appearanceSettings.navigationBarTintColor = [UIColor blackColor];
-	        	appearanceSettings.navigationBarTitleColor = [UIColor blackColor];
-			}
-		}
+		if (@available(iOS 13, *)) appearanceSettings.navigationBarTintColor = [UIColor labelColor];
+		if (@available(iOS 13, *)) appearanceSettings.navigationBarTitleColor = [UIColor labelColor];
 		self.hb_appearanceSettings = appearanceSettings;
     }
 
@@ -139,23 +114,15 @@
 }
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView {
-
     CGFloat offsetY = scrollView.contentOffset.y;
-    //CGFloat offsetY = scrollView.minimumContentOffset.y;
 
     if (offsetY > (scrollView.minimumContentOffset.y+1)) {
         [UIView animateWithDuration:0.133 animations:^{
 			self.navigationItem.titleView.frame = CGRectMake(self.navigationItem.titleView.frame.origin.x, -40, self.navigationItem.titleView.frame.size.width, self.navigationItem.titleView.frame.size.height);
-            //self.iconView.alpha = 0.0;
-            //self.titleLabel.alpha = 1.0;
-
         }];
     } else {
         [UIView animateWithDuration:0.133 animations:^{
 			self.navigationItem.titleView.frame = CGRectMake(self.navigationItem.titleView.frame.origin.x, 0, self.navigationItem.titleView.frame.size.width, self.navigationItem.titleView.frame.size.height);
-			//self.iconView.alpha = 1.0;
-            //self.titleLabel.alpha = 0.0;
-
         }];
     }
 }
