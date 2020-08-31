@@ -26,7 +26,7 @@
         self.navigationItem.titleView = [[UIView alloc] initWithFrame:CGRectMake(0,0,64,40)];
 
 		NSString *_title = @"UniZoom";
-		NSString *_subtitle = @"Version 2.1.3";
+		NSString *_subtitle = @"Version 2.1.4";
 
 		UIStackView *text = [[UIStackView alloc] initWithFrame:CGRectMake(0,0,64,16)];
 		text.axis = 1;
