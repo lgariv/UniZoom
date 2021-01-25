@@ -143,7 +143,7 @@ double netflixZoomBy;
 }
 
 -(void)setPlayerViewResizeMode:(NSUInteger)arg1 {
-	arg1 = 0;
+	arg1 = 1;
 }
 
 %new
@@ -153,7 +153,7 @@ double netflixZoomBy;
 
 %new
 -(void)changeToggle {
-		if (changeToggleState == 0) {
+	if (changeToggleState == 0) {
 		[self changeToFill];
 	} else if (changeToggleState == 1) {
 		[self changeBack];
